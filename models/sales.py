@@ -5,7 +5,7 @@ class SalesModifier(models.Model):
 
     def action_message_telegram_send(self):
         for rec in self:
-            view_id = self.env.ref('telegram_integration.telegram_message_sale_form_view')
+            view_id = self.env.ref('telegram_integration.send_message_sale_action')
             return {
                 'name': _('Send Message Telegram Sale'),
                 'res_model': 'telegram.message.sale',
