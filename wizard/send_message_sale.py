@@ -44,4 +44,5 @@ class SendMessage(models.Model):
                 url_documment = 'https://api.telegram.org/bot'+from_message+'/sendDocument?chat_id='+to_message+'&document='+document_id
                 send_documment = requests.get(url_documment)
                 send_documment.json()
+                print(document_id)
             return
