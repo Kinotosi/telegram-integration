@@ -42,7 +42,8 @@ class SendMessage(models.Model):
 
                 document_id = "{}/web/content/{}?download=true".format(base_url, data_id.id)
                 url_documment = 'https://api.telegram.org/bot'+from_message+'/sendDocument?chat_id='+to_message+'&document='+document_id
-                send_documment = requests.get(url_documment)
+                # send_documment = requests.get(url_documment)
+                # send_documment.json()
+                send_documment = requests.get('https://api.telegram.org/bot'+from_message+'/sendMessage?chat_id='+to_message+'&parse_mode=MarkdownV2&text='+document_id)
                 send_documment.json()
-                print(document_id)
             return
