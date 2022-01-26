@@ -21,7 +21,7 @@
         </field>
     </record>
 
-    <record id="send_message_action" model="ir.actions.act_window">
+    <record id="send_message_sale_action" model="ir.actions.act_window">
         <field name="name">Send Message Telegram Sale</field>
         <field name="res_model">telegram.message.sale</field>
         <field name="view_mode">form</field>
