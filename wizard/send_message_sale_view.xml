@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="telegram_message_sale_form_view" model="ir.ui.view">
+        <field name="name">telegram.message.sale.form.view</field>
+        <field name="model">telegram.message.sale</field>
+        <field name="arch" type="xml">
+            <form string="Send Message">
+                <group class="oe_title">
+                    <field name="company_id" />
+                    <field name="contact_id" />
+                    <field name="message" />
+                    <field name="sale_id" readonly="1"/>
+                    <field name="is_report"/>
+                </group>
+                <footer>
+                    <button name="send_message_telegram" type="object" class="btn btn-sm btn-primary">Send</button>
+                    <button class="btn btn-sm btn-danger" special="cancel">Cancel</button>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="send_message_action" model="ir.actions.act_window">
+        <field name="name">Send Message Telegram Sale</field>
+        <field name="res_model">telegram.message.sale</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="telegram_message_sale_form_view" />
+        <field name="target">new</field>
+    </record>
+</odoo>

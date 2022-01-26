@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="sale_order_form_views_telegram" model="ir.ui.view">
+            <field name="name">sale.order.form.views.telegram</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_quotation_send']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <button name="action_message_telegram_send" string="Send by Telegram" type="object" states="sent,sale"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
